@@ -1,4 +1,4 @@
-//‚¶‚á‚ñ‚¯‚ñ
+//ã˜ã‚ƒã‚“ã‘ã‚“
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<stdlib.h>
@@ -7,22 +7,22 @@
 int main(void)
 {
 	int set, cpu, human = 0, rock = 0, scissors = 0, paper = 0, judge;
-	int hist[3] = { 0, 0, 0 };  //Ÿ”sƒJƒEƒ“ƒ^[
+	int list[3] = { 0, 0, 0 };  //å‹æ•—ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼
 
 	for (set = 1; set <= 30; set++)
 	{
-		printf("‚ ‚È‚½‚Ìo‚·è‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢(ƒO[F0,ƒ`ƒ‡ƒLF1,ƒp[F2)\n");   //è‚Ì“ü—Í
+		printf("ã‚ãªãŸã®å‡ºã™æ‰‹ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„(ã‚°ãƒ¼ï¼š0,ãƒãƒ§ã‚­ï¼š1,ãƒ‘ãƒ¼ï¼š2)\n");   //æ‰‹ã®å…¥åŠ›
 		scanf("%d", &human);
 
 
-		if (human == 0)    //l‚Ìè‚ÌƒJƒEƒ“ƒg
+		if (human == 0)    //äººã®æ‰‹ã®ã‚«ã‚¦ãƒ³ãƒˆ
 			rock++;
 		if (human == 1)
 			scissors++;
 		if (human == 2)
 			paper++;
 
-		if ((set % 3 == 0) || (set % 3 == 1) || (rock == scissors) && (rock == paper))  //CPU‚Ìè‚ÌŒˆ’è
+		if ((set % 3 == 0) || (set % 3 == 1) || (rock == scissors) && (rock == paper))  //CPUã®æ‰‹ã®æ±ºå®š
 		{
 			srand((unsigned int)time(NULL));
 			cpu = rand() % 3;
@@ -47,24 +47,24 @@ int main(void)
 		}
 
 		if (cpu == 0)
-			printf("Com‚ÍƒO[‚Å‚·B\n");
+			printf("Comã¯ã‚°ãƒ¼ã§ã™ã€‚\n");
 		if (cpu == 1)
-			printf("Com‚Íƒ`ƒ‡ƒL‚Å‚·B\n");
+			printf("Comã¯ãƒãƒ§ã‚­ã§ã™ã€‚\n");
 		if (cpu == 2)
-			printf("Com‚Íƒp[‚Å‚·B\n");
+			printf("Comã¯ãƒ‘ãƒ¼ã§ã™ã€‚\n");
 
-		judge = (cpu - human + 3) % 3;      //Ÿ”s”»’è
+		judge = (cpu - human + 3) % 3;      //å‹æ•—åˆ¤å®š
 		switch (judge)
 		{
-		case 0:printf("ˆø‚«•ª‚¯‚Å‚·B\n");
+		case 0:printf("å¼•ãåˆ†ã‘ã§ã™ã€‚\n");
 			break;
-		case 1:printf("Player‚ÌŸ—˜‚Å‚·B\n");
+		case 1:printf("Playerã®å‹åˆ©ã§ã™ã€‚\n");
 			break;
-		case 2:printf("Com‚ÌŸ—˜‚Å‚·B\n");
+		case 2:printf("Comã®å‹åˆ©ã§ã™ã€‚\n");
 		}
 
-		hist[judge]++;
-		printf("---Player‚ÌíÑEEE%dŸ%d”s%d•ª---\n\n", hist[1], hist[2], hist[0]);
+		list[judge]++;
+		printf("---Playerã®æˆ¦ç¸¾ãƒ»ãƒ»ãƒ»%då‹%dæ•—%dåˆ†---\n\n", hist[1], hist[2], hist[0]);
 
 	}
 	return 0;
